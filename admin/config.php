@@ -1,9 +1,15 @@
-<?php 
-if(function_exists("opcache_reset")){opcache_reset();} //清除PHP脚本缓存
-require_once dirname(__FILE__).'/../include/class.main.php';
-if(file_exists(dirname(__FILE__).'/../save/config.php')){include dirname(__FILE__).'/../save/config.php';}
-session_start(); 
-$username=isset($_SESSION['username'])?$_SESSION['username']:'admin';
-if(empty($_SESSION['hashstr']) || $_SESSION['hashstr']!==md5((isset($CONFIG["user"])?$CONFIG["user"]:"admin").(isset($CONFIG["pass"])?$CONFIG["pass"]:MD5("admin888")))){header("location:login.html");exit();}
-
-
+<?php
+session_start();
+error_reporting(0);
+include('../inc/aik.config.php'); 
+define('SYSPATH',$aik['path']);
+$rep='foot';
+if($_SESSION['admin_aik']!==base64_decode('aHR0cDovL3Yud29haWsuY29t')){
+	header("location: ./login.php");
+	exit;
+}
+$nav='';
+function md5ff($str=1){
+	return md5($str.'ff371');
+}
+?>
