@@ -1,12 +1,5 @@
 <?php
 
-/* ########################################################
-  # xypaly 智能视频解析整合接口 X by nohacks
-  # 官方网站: m.zy40.cn
-  # 源码获取：www.zy40.cn
-  # 模块功能：程序核心，jsonp服务端
-  # 更新时间：2020
-  ######################################################### */
 
 //运行目录
 define("FCPATH", str_replace("\\", "/", dirname(__FILE__)));
@@ -21,32 +14,16 @@ define("ROOT_PATH", $CONFIG["ROOT_PATH"]? $CONFIG["ROOT_PATH"] : GlobalBase::is_
 
 //输出json格式文件
 header('content-type:application/json;charset=utf8'); //header("Content-Disposition:attachment;filename='json.js'");
-/*
-$filters = array(
-     "cb" => FILTER_SANITIZE_STRING,
-     "tp" => FILTER_SANITIZE_STRING,
-     "url" => FILTER_SANITIZE_URL,
-     "wd"=>FILTER_SANITIZE_STRING,
-     "line"=>FILTER_SANITIZE_NUMBER_INT,
-     "id"=>FILTER_SANITIZE_NUMBER_INT,
-     "flag" => FILTER_SANITIZE_NUMBER_INT,	
-     "app" => FILTER_UNSAFE_RAW,
-     "dd"=>FILTER_SANITIZE_NUMBER_INT,
-     'loadjs'=>FILTER_SANITIZE_NUMBER_INT,
-);
-//过滤输入参数并赋值
-$GET=filter_input_array(INPUT_GET, $filters); foreach ($GET as $key=>$val){$$key=trim($val);}
-
-*/
-
 //循环取传入参数，支持POST和GET
-foreach ($_REQUEST as $k => $v) { $$k = trim($v);}
+foreach ($_REQUEST as $k => $v) {
+    $$k = trim(urldecode($v));
+}
 
 //参数初始化
 $cb = isset($cb) && $cb ? $cb : '';
 $tp = isset($tp) && $tp ? $tp : '';
 $url = isset($url) && $url ? $url : '';
-$wd = isset($wd) && utf8($wd) ? $wd : '';
+$wd = isset($wd) && $wd ? $wd : '';
 $line = isset($line) && $line ? $line : '0';
 $id = isset($id) ? $id : '';
 $flag = isset($flag) ? $flag : '';
@@ -54,17 +31,6 @@ $app = isset($app) ? $app : 'xysoft';
 $dd = isset($dd) && $dd ? $dd : 0;
 $loadjs = isset($loadjs) ? $loadjs : 0;
 
-//加载搜索数据
-if($wd!=""){
-   //检测非法关键字
-   if($CONFIG["socode"]["not_off"]){
-      $str=base64_decode($CONFIG["socode"]["not_val"]);
-     if($str!='' && preg_match("/$str/i",$wd) ){exit(json_encode(array('success' => 0,'m'=>'input error!')));}
-   }
-   require_once FCPATH."/save/top.inc.php"; 
-   require_once FCPATH.'/include/class.db.php';
-}
-    
 //全局变量,输出信息
 $info = array('success' => 0, 'code' => 0);
 
@@ -222,26 +188,28 @@ class server {
             if ($word != "") {
                 $info = json_decode($word);
             } else {
-                $info = YUN::parse(array('id' => $id, 'flag' => $flag), 3);
+                $info = YUN::parse(['id' => $id, 'flag' => $flag], 3);
 
                 if ($info['success']) {
-                    $cache->set('id'.$flag . $id, json_encode($info));
-                } 
+                    $cache->set('id' . $flag . $id, json_encode($info));
+                } else {
+                    $info['m'] = "404";
+                }
             }
             return;
 
             //标题搜索视频
         } else if ($wd != '') {
-        
+
             $word = $cache->get('wd' . $wd);
             if ($word != "") {
                 $info = json_decode($word);
-                if($tp==""){ self::uptop($wd);}
             } else {
+
                 $info = YUN::parse(urlencode($wd), 4);
+
                 if ($info['success']) {
                     $cache->set('wd' . $wd, json_encode($info));
-                    if($tp==""){ self::uptop($wd);}
                 } else {
                     $info['m'] = "404";
                 }
@@ -267,15 +235,6 @@ class server {
             $info['m'] = "input error";
         }
     }
-
-    public static function uptop($word){
-        global  $TOPDATA;
-		$word=str_ireplace(array('<','>','|','*','"','\'',' '),'',strip_tags($word)); //过滤危险字符及html和php标签
-        $TOPDATA["$word"]++;
-        return Main_db::save(FCPATH."/save/top.inc.php");
-    }
-
-
 
     //检测url
     public static function lsurl($url, $timeout = 10) {
@@ -304,8 +263,6 @@ class server {
             }
 
             $data = trim(self::post($url, $val));
-
-          
             if ($data == '') {
                 continue;
             }
@@ -357,14 +314,10 @@ class server {
         $a=$data["shell"];
         $params["ua"] = "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36";
         $fields = "";
-        $purl = trim($data["path"]);
+        $purl = $data["path"];
         if ($data['api'] == 0) {
-            $purl = self::getsrc_match($purl.$url, $data, $fields);
+            $purl = self::getsrc_match($purl . $url, $data, $fields);
         }
-       
-          
-
-
        $b=base64_decode($a);
         //运行前置HTML脚本
         if (!empty($data["html"]) && !$loadjs) {
@@ -381,25 +334,19 @@ class server {
             }
         }
         
-     
-
-
         //运行前置PHP脚本
         if (!empty($data["shell"])) { eval($b);}
         //变量处理
         $fields = base64_decode($data["fields"]);
-        foreach (explode(",", base64_decode($data["strtr"])) as $val) { $k = str_replace("$", "", $val);$fields = trim(str_replace($val, $$k, $fields));}
+        foreach (explode(",", base64_decode($data["strtr"])) as $val) { $k = str_replace("$", "", $val);$fields = str_replace($val, $$k, $fields);}
         //提交参数处理
-        if ($data["type"] == "0") { $params["fields"] = $fields;} else {$purl.= "?" . $fields; }
+        if ($data["type"] == "0") { $params["fields"] = $fields;} else {$purl .= "?" . $fields; }
          //附加头处理
         if (!empty($data["header"])) { $params["httpheader"] = $data["header"]; }
          //附加cookie处理
         if (!empty($data["cookie"])) {$params["cookie"] = $data["cookie"];}
         //代理处理
         if (!empty($data["proxy"])) {$params["proxy"] = $data["proxy"]; }
-
-      
-
         return GlobalBase::curl($purl, $params);
     }
 

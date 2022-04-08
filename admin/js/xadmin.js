@@ -11,30 +11,23 @@ $(function () {
     //触发事件
   var tab = {
         tabAdd: function(title,url,id){
-         //取得打开标签总数
-         var len=$('.x-iframe').length;
-         //检测是否存在
-         for (var i = 0; i <len; i++) {if($('.x-iframe').eq(i).attr('tab-id')==id){return false;}};
-         //限制打开个数
-         if(len>=8){layer.alert("请关闭多余标签,不要超过8个!", {icon: 5});return false;}
           //新增一个Tab项
           element.tabAdd('xbs_tab', {
             title: title 
             ,content: '<iframe tab-id="'+id+'" frameborder="0" src="'+url+'" scrolling="yes" class="x-iframe"></iframe>'
             ,id: id
           });
-    
         }
         ,tabDelete: function(othis){
           //删除指定Tab项
-          element.tabDelete('xbs_tab', id); //删除
+          element.tabDelete('xbs_tab', '44'); //删除：“商品管理”
           
           
           othis.addClass('layui-btn-disabled');
         }
         ,tabChange: function(id){
           //切换到指定Tab项
-          element.tabChange('xbs_tab', id); //切换
+          element.tabChange('xbs_tab', id); //切换到：用户管理
         }
       };
 
@@ -176,7 +169,6 @@ function getCateId(cateId) {
     h       弹出层高度（缺省调默认值）
 */
 function x_admin_show(title,url,w,h){
-
     if (title === null || title === '') {
         title=false;
     };
@@ -193,12 +185,11 @@ function x_admin_show(title,url,w,h){
         type: 2,
         area: [w+'px', h +'px'],
         fix: false, //不固定
-       maxmin: true,
+        maxmin: true,
         shadeClose: true,
-        shade:0.4,    
+        shade:0.4,
         title: title,
-        content: url,
-       
+        content: url
     });
 }
 

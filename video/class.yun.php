@@ -49,9 +49,9 @@ class YUN
 //根据url或视频名称取视频信息
  public static function getvideo($val,$lswrod=false)
  {	  
-	global $YUN_MATCH,$YUN_CONFIG; 
-	;$num=1;$name="";$url="";$api=$YUN_CONFIG["API"];
-	$videoinfo=array('success'=>0,'code'=>0);
+
+	global  $YUN_MATCH ,$YUN_CONFIG; $api=$YUN_CONFIG["API"];
+        $videoinfo=array('success'=>0,'code'=>0);$num=1;$name="";$url="";
     	if($lswrod){
                  $name=$val; 
          }else{
@@ -84,8 +84,7 @@ class YUN
 		 //检测是否存在名称，兼容苹果CMS		 
 		 if(!strpos($vod[0],"$")){foreach($vod as &$mov){$mov="高清$".$mov;}}
 		 if($YUN_CONFIG["flag_filter"]=="" ||preg_match('/'.$YUN_CONFIG["flag_filter"]."/i",$flag)){$info[]=array('flag'=>$flag,'flag_name'=>$YUN_CONFIG["flag_replace"][$flag] ? $YUN_CONFIG["flag_replace"][$flag]:$flag,'site'=>$i,'part'=>sizeof($vod),'video'=>$vod,);}             			 
-		//匹配期数
-		$matches=array();		
+		//匹配期数		   			
 	        $vods = preg_match('!#'.(string)$num.'.*?\$(.*?)(?=\$|#)!i', $video, $matches) ? trim($matches[1]) : '';
 		if ($vods!=''){$videoinfo['url']=$vods;$videoinfo['play']=$flag;}		   
 	   
@@ -109,7 +108,7 @@ class YUN
 		$vod=@$info[0]['video'][$num-1];$vod=explode('$', $vod); 
 		//类型转换
 		$type=$info[0]['flag'];		
-		foreach($YUN_MATCH["type_match"] as $key => $val ){			
+		foreach($type_match as $key => $val ){			
 		    if (preg_match($key,$type,$matches)){			 
 			    $type=$val;break;			 
 		   }else if(preg_match($key,@$vod[1],$matches)){				 
@@ -144,20 +143,12 @@ class YUN
 	  
 	 $data=self::curl($api."?ac=videolist&ids=".$id);if($data==''){return false;}      
       $xml = simplexml_load_string($data);  if(empty($xml)){return false;}    	 		
-	 
-	  $list=$xml->list->video->dl->dd;
-   
-       //if(empty($list)){return array('success'=>'0','code'=>'404','title'=>$name,'pic'=>$img,'m'=>'暂无资源');}
-	   if(empty($list)){return array('success'=>'0','code'=>'404','m'=>'暂无资源');}
-	 
-	   $img=$xml->list->video->pic.""; $name=$xml->list->video->name."";	
+	  $img=$xml->list->video->pic.""; $name=$xml->list->video->name."";	
 	   foreach($xml->list->video->dl->dd as $video)	    
 	   {        
 	     $flag=(string)$video->attributes(); 
              $flag_name=$YUN_CONFIG["flag_replace"][$flag] ? $YUN_CONFIG["flag_replace"][$flag]:$flag;
-			  $vod=explode("#",(string)$video);     
-			  
-			  
+              $vod=explode("#",(string)$video);         
 		  //检测是否存在名称，兼容苹果CMS		 
 		 if(!strpos($vod[0],"$")){foreach($vod as &$mov){$mov="高清$".$mov;}}		 		  	 		 			 			  				  			  
                  
@@ -181,8 +172,7 @@ class YUN
 		}
 		
 	
-		//输出数据	
-		 
+		//输出数据		 
 		 $videoinfo['success']=1; 
 		 $videoinfo['code']=200;
 		 $videoinfo['url']=$vod[1];
@@ -198,12 +188,17 @@ class YUN
   public static function getnames($name)
  {
     global $YUN_MACTH,$YUN_CONFIG;$api=$YUN_CONFIG["API"];
-    $videoinfo=array('success'=>0,'code'=>0);
+      
+      // $API_URL,$API_MATCH,$FLAG_MATCH; $api=$API_URL;
+  
+   $videoinfo=array('success'=>0,'code'=>0);
    
   for($i=0;$i<sizeof($api);$i++){ 
         $_api=explode("=>",$api[$i]); 
+      
         $data=self::curl($_api[1]."?wd=".$name); 
-              
+        
+        
         if(!$data){break;}		
 		$xml = simplexml_load_string($data);  
 		  foreach($xml->list->video as $video)	    
@@ -211,12 +206,6 @@ class YUN
 			 $id=(string)$video->id;
                          $type=(string)$video->dt;
 			 $title=(string)$video->name;
-			 $type=(string)$video->type;
-			 
-			 //分类过滤
-			 
-			  if($YUN_CONFIG["type_filter"]==='' || !preg_match('!'.$YUN_CONFIG["type_filter"].'!i', $type)){
-			 
                          $flag_name=$YUN_CONFIG["flag_replace"][$type] ? $YUN_CONFIG["flag_replace"][$type]:$type;
                          //搜索资源过滤
                          if($YUN_CONFIG["flag_filter"]==='' || !preg_match('!'.$YUN_CONFIG["flag_filter"].'!i', $title)){
@@ -224,9 +213,6 @@ class YUN
                              $info[]=array('flag'=>$i,'flag_name'=>$flag_name,'from'=>$_api[0],'type'=>$type,'id'=>$id,'title'=>urlencode($title),'img:'=>'null');
                               
                          }
- 
-			   }
- 
  
 	    }      
   }
@@ -269,9 +255,7 @@ class YUN
 			if(sizeof($vod)>=$num){return $id;}
 		}
     }			  
-	  //如果还未未匹配到就取第一个资源；	 
-	  
-	$matches=[];  
+	  //如果还未未匹配到就取第一个资源；	 	 
     $id = preg_match('!<id>(\d*?)</id>!i', $data, $matches) ? trim($matches[1]) : '';	
     if ($id==""){return false;}				 
 	return $id;
@@ -281,14 +265,14 @@ class YUN
  //取视频名称及集数
  public static function getname($url,&$name,&$num)
  {
-      global $YUN_MATCH,$YUN_CONFIG;
+      global $YUN_MACTH,$YUN_CONFIG;
      
      
      //$title_replace,$title_match,$name_match,$url_match;
       $title='';$name='';$num=1;
    
   //视频地址替换,用于移动转换为pc版本
-     foreach ($YUN_MATCH["url_match"] as $val => $value) 
+     foreach ($YUN_MACTH["url_match"] as $val => $value) 
     {     	 	 
 	 if (preg_match($val,$url,$matches)){		  		 		 		         
 		  
@@ -311,7 +295,7 @@ class YUN
    
    
   //调用配置预设正则，获取视频标题。
-  foreach($YUN_MATCH["title_match"] as  $val=>$value) 
+  foreach($YUN_MACTH["title_match"] as  $val=>$value) 
   {    
 	 if (preg_match($val, $url))		 
 	  {	    
@@ -331,7 +315,7 @@ class YUN
  
 
  //调用配置预设正则，获取视频名称和集数。
-  foreach($YUN_MATCH["name_match"] as  $val=>$value) 
+  foreach($YUN_MACTH["name_match"] as  $val=>$value) 
   {    
 	 if (preg_match($val, $url))		 
 	  {	     	 		  		    	 
@@ -348,7 +332,7 @@ class YUN
         if($name!=""){break;} 	 
 	  }  
   }
-     $name=trim(str_replace($YUN_MATCH["title_replace"],"",$name));
+     $name=trim(str_replace($YUN_MACTH["title_replace"],"",$name));
         return ($name!== "");   
  } 	
 	 //检测字符串组的字符在字符串中是否存在

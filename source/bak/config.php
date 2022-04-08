@@ -1,56 +1,23 @@
 <?php
 $CONFIG=array (
-  'ver' => '3.9',
+  'ver' => '3.7',
   'user' => 'admin',
   'pass' => '7fef6171469e80d32c0559f88b377245',
-  'TITLE' => 'XyPlayer 智能解析 X3',
+  'TITLE' => ' 智能解析',
   'resou' => '飞驰人生|流浪地球|绿皮书|疯狂的外星人',
   'sitetime' => '2014/05/22 14:30:00',
   'keywords' => 'vip视频解析,vip视频在线解析,vip解析,万能vip视频解析,vip视频全能解析,vip视频,手机vip视频解析,手机在线解析vip视频,优酷vip解析,爱奇艺vip解析,腾讯vip解析,乐视vip解析,芒果vip解析',
   'description' => 'XyPlayer 智能解析为您免费解析主流视频网站的VIP视频,支持爱奇艺、腾讯、优酷、乐视、芒果、搜狐、PPTV等等，可搜索最新的免费福利视频、电影和电视剧资源，欢迎使用！',
-  'HEADER' => 'PG1ldGEgaHR0cC1lcXVpdj0iQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luIiBjb250ZW50PSIqIj48IS0tIOWFgeiuuOi3qOWfn+iuv+mXriAtLT4KPCEtLSAgPG1ldGEgbmFtZT0icmVmZXJyZXIiIGNvbnRlbnQ9Im5ldmVyIj4g5Y+R6YCBcmVmZXJyZXLvvIznqoHnoLQ0MDPpmZDliLYs57uV6L+H6Ziy55uX6ZO+ICAtLT4KPG1ldGEgaHR0cC1lcXVpdj0icHJhZ21hIiBjb250ZW50PSJuby1jYWNoZSIgLz48bWV0YSBodHRwLWVxdWl2PSJleHBpcmVzIiBjb250ZW50PSIwIiAvPiAgICA8IS0tIOS4jee8k+WtmOe9kemhtSAtLT4K',
+  'HEADER' => 'PG1ldGEgaHR0cC1lcXVpdj0iQWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2luIiBjb250ZW50PSIqIj48IS0tIOWFgeiuuOi3qOWfn+iuv+mXriAtLT4KPG1ldGEgbmFtZT0icmVmZXJyZXIiIGNvbnRlbnQ9Im5ldmVyIj48IS0tIOWPkemAgXJlZmVycmVy77yM56qB56C0NDAz6ZmQ5Yi2LOe7lei/h+mYsuebl+mTviAtLT4KPG1ldGEgaHR0cC1lcXVpdj0icHJhZ21hIiBjb250ZW50PSJuby1jYWNoZSIgLz48bWV0YSBodHRwLWVxdWl2PSJleHBpcmVzIiBjb250ZW50PSIwIiAvPiAgICA8IS0tIOS4jee8k+WtmOe9kemhtSAtLT4KPG1ldGEgbmFtZT0ieDUtZnVsbHNjcmVlbiIgY29udGVudD0idHJ1ZSIgLz48bWV0YSBuYW1lPSJ4NS1wYWdlLW1vZGUiIGNvbnRlbnQ9ImFwcCIgIC8+IDwhLS0gWDUgIOWFqOWxj+WkhOeQhiAtLT4KPG1ldGEgbmFtZT0iZnVsbC1zY3JlZW4iIGNvbnRlbnQ9InllcyIgLz48bWV0YSBuYW1lPSJicm93c2VybW9kZSIgY29udGVudD0iYXBwbGljYXRpb24iIC8+ICA8IS0tIFVDIOWFqOWxj+W6lOeUqOaooeW8jyAtLT4KPG1ldGEgbmFtZT3igJ1hcHBsZS1tb2JpbGUtd2ViLWFwcC1jYXBhYmxl4oCdIGNvbnRlbnQ94oCdeWVz4oCdIC8+IDxtZXRhIG5hbWU94oCdYXBwbGUtbW9iaWxlLXdlYi1hcHAtc3RhdHVzLWJhci1zdHlsZeKAnSBjb250ZW50PeKAnWJsYWNrLXRyYW5zbHVjZW504oCdIC8+IDwhLS0gIOiLueaenOWFqOWxj+W6lOeUqOaooeW8jyAtLT4=',
   'API_PATH' => 'api.php',
   'ROOT_PATH' => '',
   'templets' => 
   array (
-    'off' => '',
+    'off' => '0',
     'html' => 'html',
     'css' => '',
     'pc' => 'byg',
-    'wap' => 'default',
-  ),
-  'plus' => 
-  array (
-    'weixin' => 
-    array (
-      'title' => '星源影视',
-      'api' => 'http://parse.xymov.net',
-      'token' => 'weixin',
-      'pic' => 'http://parse.xymov.net/plus/weixin/play.jpg',
-      'book' => 'http://www.xymov.net/book.htm',
-      'num' => '5',
-      'msg_send' => '欢迎关注星源影视
-本公众号提供在线影视观看,免广告看VIP视频，持续关注，精彩多多。
-输入格式：
-【电影名】,  如:西游记 即可在线观看!
-【视频网址】,支持爱奇艺,腾讯,优酷等各大视频网站无等待广告免VIP播放。
-【帮助】 显示帮助信息
-【留言】打开留言本，留言求片。',
-      'msg_not' => '资源未找到,点击图片留言反馈! ',
-      'msg_help' => '欢迎关注星源影视输入格式：
-【电影名】,  如:西游记 即可在线观看!
-【视频网址】,支持爱奇艺,腾讯,优酷等各大视频网站无等待广告免VIP播放。
-【帮助】 显示帮助信息
-【留言】打开留言本，留言求片。',
-    ),
-  ),
-  'socode' => 
-  array (
-    'top_off' => '1',
-    'diy_off' => '1',
-    'diy_val' => 'PCEtLSAgICAg6Ieq5a6a5LmJIOeDremXqOaQnOe0oiAgIAoKPGZvbnQgZmFjZT0idmVyZGFuYSIgc3R5bGU9ImNvbG9yOiM1MGIyYzg7Ij7ng63pl6jmkJzntKLvvJo8L2ZvbnQ+Cgo8YSBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBvbmNsaWNrPSJ0b3AubG9jYXRpb24uaHJlZj0nLi8/d2Q9Jyt0aGlzLmlubmVySFRNTDsiPuWkjeS7h+iAheiBlOebnzwvYT4KPGEgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgb25jbGljaz0idG9wLmxvY2F0aW9uLmhyZWY9Jy4vP3dkPScrdGhpcy5pbm5lckhUTUw7Ij7mnIDlpb3nmoTmiJHku6w8L2E+Cjxici8+PGJyLz4KCue7k+adnyAgIC0tPgoKPCEtLSAgICAg6Ieq5a6a5LmJIOWFtuWugyAgICAtLT4KPGZvbnQgZmFjZT0idmVyZGFuYSIgc3R5bGU9ImNvbG9yOiM1MGIyYzg7Ij7op6PmnpDmlK/mjIHvvJrkvJjphbfjgIHniLHlpYfoibrjgIHohb7orq/jgIHoipLmnpzjgIHkuZDop4bjgIHmkJzni5DjgIFNUDTjgIFNM1U444CBRkxW562J562JPC9mb250Pjxici8+Cg==',
-    'not_val' => '6Imy5oOFfOa3q3znp7185by65aW4fOWPpuexu3zkubHkvKZ85ZK75Zi/fOiOieWTpXxBVg==',
-    'not_off' => '1',
+    'wap' => 'byg',
   ),
   'chche_config' => 
   array (
@@ -79,7 +46,6 @@ $CONFIG=array (
         'val' => 
         array (
           0 => 'localhost',
-          1 => 'app.52ly.top',
         ),
         'black' => '0',
         'name' => '授权网站',
@@ -175,6 +141,7 @@ $CONFIG=array (
         'val' => 
         array (
           0 => '$host',
+          1 => 'qq.com',
         ),
         'black' => '8',
         'name' => '开启API防盗',
@@ -255,13 +222,13 @@ $CONFIG=array (
         0 => 
         array (
           'off' => '1',
-          'name' => '过滤站长统计',
+          'name' => '干掉所有JS代码',
           'target' => 'Lio=',
           'ref' => '',
-          'num' => '100',
+          'num' => '1000',
           'val' => 
           array (
-            '<script.*?cnzz.com.*?</script>' => '',
+            '<script>[\\S\\s]*<\\/script>' => '',
           ),
         ),
       ),
@@ -271,7 +238,7 @@ $CONFIG=array (
   ),
   'NULL_URL' => 
   array (
-    'type' => '0',
+    'type' => '2',
     'url' => 'so.php',
     'info' => 'IDxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+CiAgICBIMXttYXJnaW46MTAlIDAgYXV0bzsgY29sb3I6I0M3NjM2QzsgdGV4dC1hbGlnbjpjZW50ZXI7IGZvbnQtZmFtaWx5OiBNaWNyb3NvZnQgSmhlbmdoZWk7fQogICAgcHtmb250LXNpemU6IDEuMnJlbTsvKjEuMiDDlyAxMHB4ID0gMTJweCAqLzt0ZXh0LWFsaWduOmNlbnRlcjsgZm9udC1mYW1pbHk6IE1pY3Jvc29mdCBKaGVuZ2hlaTt9CiAgICA8L3N0eWxlPiAgCiAgIDxoMT7or7floavlhpl1cmzlnLDlnYA8L2gxPgogICA8cD7mnKzop6PmnpDmjqXlj6Pku4XnlKjkuo7lrabkuaDkuqTmtYHvvIznm5fnlKjlv4XnqbbvvIF+PC9wPg==',
   ),
@@ -287,7 +254,7 @@ $CONFIG=array (
       'match' => 'e1wkXC5wb3N0XCgiKC4rPykifQ==',
       'num' => '999',
       'name' => '官方CMS插件接口',
-      'path' => 'http://mov.nohacks.cn/parse/api.php',
+      'path' => 'http://mov.baidu.com/parse/api.php',
       'shell' => '',
       'html' => '',
       'fields' => 'IHVybD0kdXJs',
@@ -356,89 +323,48 @@ $CONFIG=array (
   ),
   'jx_url' => 
   array (
-    0 => '推荐线路=>https://v.nmbaojie.com/mingri/mingri.php?url=',
-    1 => '备用线路1=>https://www.jiexila.com/?url=',
-    2 => '备用线路2=> https://www.nxflv.com/?url=',
+    0 => '推荐线路=>https://jx.dy-jx.com/?url=',
+    1 => '备用线路1=>https://jx.99yyw.com/99/?url=',
+    2 => '备用线路2=>https://www.myxin.top/jx/api/?url=',
+    3 => '备用线路3=> https://www.jiexila.com/?url=',
+    4 => '备用线路4=> https://www.nxflv.com/?url=',
   ),
   'jx_link' => 
   array (
-    '视频搜索' => 'xyplay.open("so.php?url="+xyplay.url,true);',
+    '视频搜索' => 'xyplay.href("so.php?url="+xyplay.url);',
   ),
   'live_url' => 
   array (
-    'CCTV-1蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMjYvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-2蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMzAvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-3蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTE3LjE2OS4xMjQuMzY6NjYxMC95c3Rlbi1idXNpbmVzc21vYmlsZS9saXZlL2NjdHYtMy8xLm0zdTgiLCJhbGlwbGF5ZXIiKTs=',
-    'CCTV-4蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYzMTQvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-5蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMjIzLjExMC4yNDEuMTMwOjY2MTAvZ2l0di9saXZlMS9HX0NDVFYtNS1IUS9HX0NDVFYtNS1IUS8jLm0zdTgiLCJhbGlwbGF5ZXIiKTs=',
-    'CCTV-5+蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMjUvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-6蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMjIzLjExMC4yNDMuMTM5L1BMVFYvMy8yMjQvMzIyMTIyNTU0OC9pbmRleC5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-7蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMzQvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-8蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTE3LjE2OS4xMjQuMzY6NjYxMC95c3Rlbi1idXNpbmVzc21vYmlsZS9saXZlL2NjdHYtOC8xLm0zdTgiLCJhbGlwbGF5ZXIiKTs=',
-    'CCTV-9蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMzYvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-10蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMjcvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-11蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYzMTUvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-12蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMjgvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-13蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMjIxLjIzMC4xNDEuMjUyL2xpdmUtY25jLWNkbi55c3AuY2N0di5jbi95c3AvMjAwMDIwNDYwMy5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-14蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMjkvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-15蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4xNjcvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYzMzMvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    'CCTV-17蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYzMTgvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '北京卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMjQvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '天津卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyNDYvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '河北卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMzkuMTM1LjE1LjcwOjY2MTAvUExUVi84ODg4ODg4OC8yMjQvMzIyMTIyNjA1OC8xL2luZGV4Lm0zdTg/Zm10PXRzMmhscyIsImFsaXBsYXllciIpOw==',
-    '河北卫视超清' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMjIzLjExMC4yNDUuMTQ5L290dC5qcy5jaGluYW1vYmlsZS5jb20vUExUVi8zLzIyNC8zMjIxMjI1ODQwL2luZGV4Lm0zdTgiLCJhbGlwbGF5ZXIiKTs=',
-    '东方卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMzcvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '东方卫视蓝' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjU4MjgvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '湖南卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyNDEvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '浙江卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyNDcvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '江苏卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyNDIvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '东南卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTE3LjE2OS4xMjQuMzc6NjYxMC95c3Rlbi1idXNpbmVzc21vYmlsZS9saXZlL2RvbmduYW5zdHYveXN0Lm0zdTgiLCJhbGlwbGF5ZXIiKTs=',
-    '山东卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYzMDgvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '湖北卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYzMTAvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '安徽卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMjMvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '广东卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMzgvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '深圳卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyNDUvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '辽宁卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vb3R0LmZqLmNoaW5hbW9iaWxlLmNvbS9QTFRWLzg4ODg4ODg4LzIyNC8zMjIxMjI1OTQ3LzEubTN1OCIsImFsaXBsYXllciIpOw==',
-    '龙江卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyMzkvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '吉林卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMzkuMTM1LjE1LjcwOjY2MTAvUExUVi84ODg4ODg4OC8yMjQvMzIyMTIyNTc1My8xLzEwMDAubTN1OCIsImFsaXBsYXllciIpOw==',
-    '江西卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjYyNDMvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '四川卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vb3R0LmZqLmNoaW5hbW9iaWxlLmNvbS9QTFRWLzg4ODg4ODg4LzIyNC8zMjIxMjI3MDA2LzEubTN1OCIsImFsaXBsYXllciIpOw==',
-    '四川卫视超清' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTE4LjEyMy42MC4xNzo4MTEyL3N5aGpjbXNfaGxzLzEwMDAwMTAwMDAwMDAwMDUwMDAwMDAwMDAwMDAwMDgwIiwiYWxpcGxheWVyIik7',
-    '重庆卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vb3R0LmZqLmNoaW5hbW9iaWxlLmNvbS9QTFRWLzg4ODg4ODg4LzIyNC8zMjIxMjI1OTQ5LzEubTN1OCIsImFsaXBsYXllciIpOw==',
-    '厦门卫视蓝光' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vb3R0LmZqLmNoaW5hbW9iaWxlLmNvbS9QTFRWLzg4ODg4ODg4LzIyNC8zMjIxMjI2NzgxLzEubTN1OCIsImFsaXBsYXllciIpOw==',
-    '河南卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMjIzLjExMC4yNDUuMTU3L290dC5qcy5jaGluYW1vYmlsZS5jb20vUExUVi8zLzIyNC8zMjIxMjI1ODE1L2luZGV4Lm0zdTgiLCJhbGlwbGF5ZXIiKTs=',
-    '海南卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjU4NTUvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '甘肃卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjU4NzcvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '青海卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjU4OTMvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '云南卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMjIzLjExMC4yNDUuMTU5L290dC5qcy5jaGluYW1vYmlsZS5jb20vUExUVi8zLzIyNC8zMjIxMjI1ODM4L2luZGV4Lm0zdTgiLCJhbGlwbGF5ZXIiKTs=',
-    '内蒙卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjU4OTEvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '西藏卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjU5MDAvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '西藏藏语' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMzkuMTM1LjE1LjcwOjY2MTAvUExUVi84ODg4ODg4OC8yMjQvMzIyMTIyNTY5Ny8xL2luZGV4Lm0zdTg/Zm10PXRzMmhscyIsImFsaXBsYXllciIpOw==',
-    '山西卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjU4OTUvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '广西卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjU4MzYvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '新疆卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTExLjEzLjExMS4yNDIvb3R0dHYuYmouY2hpbmFtb2JpbGUuY29tL1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjU5MDEvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '兵团卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMzkuMTM1LjE1LjcwOjY2MTAvUExUVi84ODg4ODg4OC8yMjQvMzIyMTIyNTcyMi8xL2luZGV4Lm0zdTg/Zm10PXRzMmhscyIsImFsaXBsYXllciIpOw==',
-    '农林卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMzkuMTM1LjE1LjcwOjY2MTAvUExUVi84ODg4ODg4OC8yMjQvMzIyMTIyNTY5Ni8xL2luZGV4Lm0zdTg/Zm10PXRzMmhscyIsImFsaXBsYXllciIpOw==',
-    '安多卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMzkuMTM1LjE1LjcwOjY2MTAvUExUVi84ODg4ODg4OC8yMjQvMzIyMTIyNTY5NC8xL2luZGV4Lm0zdTg/Zm10PXRzMmhscyIsImFsaXBsYXllciIpOw==',
-    '三沙卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMzkuMTM1LjE1LjcwOjY2MTAvUExUVi84ODg4ODg4OC8yMjQvMzIyMTIyNTY5My8xL2luZGV4Lm0zdTg/Zm10PXRzMmhscyIsImFsaXBsYXllciIpOw==',
-    '康巴卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMzkuMTM1LjE1LjcwOjY2MTAvUExUVi84ODg4ODg4OC8yMjQvMzIyMTIyNTY5NS8xL2luZGV4Lm0zdTg/Zm10PXRzMmhscyIsImFsaXBsYXllciIpOw==',
-    '延边卫视' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMzkuMTM1LjE1LjcwOjY2MTAvUExUVi84ODg4ODg4OC8yMjQvMzIyMTIyNTcyMS8xL2luZGV4Lm0zdTg/Zm10PXRzMmhscyIsImFsaXBsYXllciIpOw==',
-    '仙桃生活' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMzY5NzkuaGxzcGxheS5hb2RpYW55dW4uY29tL2d1YW5nZGlhbnl1bl8zNjk3OS90dl9jaGFubmVsXzUxMC5tM3U4IiwiYWxpcGxheWVyIik7',
-    '金鹰卡通' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTE3LjE0OC4xODcuMzcvUExUVi84ODg4ODg4OC8yMjQvMzIyMTIyNjE5MC9pbmRleC5tM3U4IiwiYWxpcGxheWVyIik7',
-    '蓝光影视1台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjY3MzYvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '蓝光影视2台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjU4ODEvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '蓝光影视3台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjY3MDgvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '蓝光影视4台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjY3MTIvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '蓝光影视5台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjU4OTMvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '蓝光影视6台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjY2OTIvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '蓝光影视7台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjY3NTQvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '蓝光影视8台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjE3LjQwLjE0NS9QTFRWLzg4ODg4ODg4LzIyNC8zMjIxMjI2NjA4L2luZGV4Lm0zdTgiLCJhbGlwbGF5ZXIiKTs=',
-    '蓝光影视9台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjE3LjQwLjE0NS9QTFRWLzg4ODg4ODg4LzIyNC8zMjIxMjI2NjA2L2luZGV4Lm0zdTgiLCJhbGlwbGF5ZXIiKTs=',
-    '蓝光影视10台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjE3LjQwLjE0NS9QTFRWLzg4ODg4ODg4LzIyNC8zMjIxMjI2MzYwL2luZGV4Lm0zdTgiLCJhbGlwbGF5ZXIiKTs=',
-    '蓝光影视11台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vc3RyZWFtLmd1aWhldC5jb20vbWlndS9pbmRleC5waHA/aWQ9NjI1NTQyMzY5IiwiYWxpcGxheWVyIik7',
-    '蓝光动画13台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjY3MzIvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '蓝光动画14台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjY3NDEvMS5tM3U4IiwiYWxpcGxheWVyIik7',
-    '蓝光动漫15台' => 'eHlwbGF5LmxpdmVzKCJodHRwOi8vMTEyLjUwLjI0My44L1BMVFYvODg4ODg4ODgvMjI0LzMyMjEyMjY3NDMvMS5tM3U4IiwiYWxpcGxheWVyIik7',
+    '解说电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzk0NTI1MjI0LTI1ODM1NzE5NjItMTEwOTYzNTcwODM2NTI1NTQ3NTItMzUwMzAzODgzMC0xMDA1Ny1BLTAtMS5tM3U4Iik7ICAgCQ==',
+    '陈翔六点半' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzk0NTI1MjI0LTI2NTU1Mzc0NzQtMTE0MDU0NDY2MDQxMzI0NTAzMDQtMjcwNDIzMzM1MC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '赵本山小品' => 'eHlwbGF5LmxpdmVzKCJodHRwczovL2FsZGlyZWN0Lmhscy5odXlhLmNvbS9odXlhbGl2ZS8yOTEwNjA5Ny0yNjg5NDQzNDI2LTExNTUxMDcxNTU5MTEyMTk2MDk2LTI3ODkyNTM4NjYtMTAwNTctQS0wLTFfMTIwMC5tM3U4Iik7',
+    '开心鬼电影' => 'eHlwbGF5LmxpdmVzKCJodHRwczovL2FsZGlyZWN0Lmhscy5odXlhLmNvbS9odXlhbGl2ZS8yOTE2OTAyNS0yNjg2MjIxNTY2LTExNTM3MjMzNzc1Nzc5OTA1NTM2LTI3ODkyNTM4NDItMTAwNTctQS0xNTIzOTMzNzA4LTFfMTIwMC5tM3U4Iik7',
+    '五福星电影' => 'eHlwbGF5LmxpdmVzKCJodHRwczovL2FsZGlyZWN0Lmhscy5odXlhLmNvbS9odXlhbGl2ZS8yOTE2OTAyNS0yNjg2MjIwMDQwLTExNTM3MjI3MjIxNjU5ODExODQwLTI3MTM2ODU0MTYtMTAwNTctQS0xNTI0MDQxNDk4LTFfMTIwMC5tM3U4Iik7',
+    '经典港片' => 'eHlwbGF5LmxpdmVzKCJodHRwczovL2FsZGlyZWN0Lmhscy5odXlhLmNvbS9odXlhbGl2ZS85NDUyNTIyNC0yNDcyMTQ3NDA0LTEwNjE3NzkyMjUxMDcxMjk5NTg0LTI3NzcwMjY2MzgtMTAwNTctQS0wLTFfMTIwMC5tM3U4Iik7',
+    '成龙电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzk0NTI1MjI0LTI0NjA2ODU3MjItMTA1Njg1NjQ3MDE3MjQxNDc3MTItMjc4OTI1MzgzOC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '周星驰电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzk0NTI1MjI0LTI0NjA2ODUzMTMtMTA1Njg1NjI5NDUwODI1MjM2NDgtMjc4OTI3NDUyNC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '周润发电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzk0NTI1MjI0LTI0NjA2ODU3NzQtMTA1Njg1NjQ5MjUwNjI0NDcxMDQtMjc4OTI1Mzg0MC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '刘德华电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzk0NTI1MjI0LTI0NjczNDE4NzItMTA1OTcxNTI2NDgyOTE0MTgxMTItMjc4OTI3NDU1MC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '李连杰电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzk0NTI1MjI0LTI0NjA2ODYwOTMtMTA1Njg1NjYyOTUxNTcwMTQ1MjgtMjc4OTI1Mzg0OC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '洪金宝电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzI5MTA2MDk3LTI2ODk0MDYyODItMTE1NTA5MTIwMjY4NDY5NTM0NzItMjc4OTI3NDU1OC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '林正英电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzk0NTI1MjI0LTI0NjA2ODYwMzQtMTA1Njg1NjYwNDE3NTM5NDQwNjQtMjc4OTI3NDU0Mi0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '甄子丹电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzI5MTY5MDI1LTI2ODYyMTk5MzgtMTE1MzcyMjY3ODM1NzMxNDc2NDgtMjg0NzY5OTA5Ni0xMDA1Ny1BLTE1MjQwMjQ3NTktMS5tM3U4Iik7',
+    '古天乐电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzI5MTY5MDI1LTI2ODYyMjAwNDAtMTE1MzcyMjcyMjE2NTk4MTE4NDAtMjcxMzY4NTQxNi0xMDA1Ny1BLTE1MjQwNDE0OTgtMS5tM3U4Iik7',
+    '斯坦森电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzMwNzY1Njc5LTI1NTQ0MTQ3MDUtMTA5NzExMjc2MTgzOTY0ODc2ODAtMzA0ODk5MTYzNi0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '徐克导演' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzI5MTA2MDk3LTI2ODk0NDcxNDgtMTE1NTEwODc1NDQ5ODA0NzE4MDgtMjc4OTI1Mzg3Mi0xMDA1Ny1BLTE1MjU0MjAyOTQtMS5tM3U4Iik7',
+    '王晶导演' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzk0NTI1MjI0LTI1Nzk2ODM1OTItMTEwNzk2NTY2NjE2Njc4MDcyMzItMjg0NzY4NzU3NC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '古惑仔电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzMwNzY1Njc5LTI1MjM0MTc1MjItMTA4Mzc5OTU3MzExNDMzNjA1MTItMjc3NzA2ODYzNC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '赌博电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzI5MTA2MDk3LTI2ODk0NDYwNDItMTE1NTEwODI3OTQ3NDY2NDI0MzItMjc4OTI1Mzg3MC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '漫威电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzMwNzY1Njc5LTI1MDQ3NDIyNzgtMTA3NTc3ODYxNjg5MTg1NDAyODgtMzA0OTAwMzEyOC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '女神港片' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzMwNzY1Njc5LTI0ODQxOTI0NzYtMTA2Njk1MjU0NDEzODkyNjQ4OTYtMjc4OTI3NDU2NC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '怪物科幻' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzMwNzY1Njc5LTI0NzgyNjg3NjQtMTA2NDQwODMyOTIwNzgzNDIxNDQtMjg0NzY5OTEwNi0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '丧尸电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzI5MTA2MDk3LTI2ODkyODY2MDYtMTE1NTAzOTgwMjIzNDA4MzczNzYtMjc4OTI3NDU0NC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '战争电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzI4NDY2Njk4LTI2ODk2NTkzNTgtMTE1NTE5OTg5Nzk5OTAzNTU5NjgtMjc4OTI3NDU4MC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '犯罪悬疑' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzMwNzY1Njc5LTI0ODAyODgzMDQtMTA2NTI3NTcxNTAzMzEzMDU5ODQtMjc4OTI3NDUzOC0xMDA1Ny1BLTE1MTE3NTcyNjAtMS5tM3U4Iik7',
+    '灾难电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzI5MzU5OTk2LTI2ODk0NzU4NjQtMTE1NTEyMTA4NzkyNjEzNDM3NDQtMjg0NzY5OTEwNC0xMDA1Ny1BLTE1MjU0MzAwOTItMS5tM3U4Iik7',
+    '真实改编' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzMwNzY1Njc5LTI1NTQ0MTQ2ODAtMTA5NzExMjc1MTEwMjIzMDUyODAtMzA0ODk5MTYzNC0xMDA1Ny1BLTAtMS5tM3U4Iik7',
+    '惊悚电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzI5MTA2MDk3LTI2ODk0NDc2MDAtMTE1NTEwODk0ODYzMDU2ODk2MDAtMjc4OTI3NDU2OC0xMDA1Ny1BLTE1MjU0MjA2OTUtMS5tM3U4Iik7',
+    '动画电影' => 'eHlwbGF5LmxpdmUoImh0dHBzOi8vdHguaGxzLmh1eWEuY29tL2h1eWFsaXZlLzI4NDY2Njk4LTI2ODk2NjE1MzAtMTE1NTIwMDgzMDg2NTkzMjI4ODAtMzA0OTAwMzEwMi0xMDA1Ny1BLTAtMS5tM3U4Iik7',
   ),
   'play' => 
   array (
@@ -448,18 +374,17 @@ $CONFIG=array (
       'link' => '0',
       'live' => '1',
       'help' => '1',
-      'debug' => '1',
+      'debug' => '0',
       'log' => '1',
       'autolist' => '0',
       'ckplay' => '1',
-      'jmp' => '0',
+      'jmp' => '1',
       'autoline' => NULL,
       'autoflag' => '0',
       'mylink' => '1',
       'lshttps' => '0',
       'jx' => '1',
       'posterr' => '1',
-      'submit' => '1',
     ),
     'line' => 
     array (
@@ -468,18 +393,16 @@ $CONFIG=array (
         'line' => '1',
         'adtime' => '0',
         'adPage' => 'source/plug/pc.html',
-        'info' => '正在加载中,请稍后....',
-        'infotime' => '0',
-        'wait' => '0',
+        'info' => '服务器正在解析中,请稍后....',
+        'infotime' => '2',
       ),
       'wap' => 
       array (
         'line' => '1',
         'adtime' => '0',
         'adPage' => 'source/plug/pc.html',
-        'info' => '正在加载中,请稍后....',
-        'infotime' => '0',
-        'wait' => '1',
+        'info' => '服务器正在解析中,请稍后....',
+        'infotime' => '2',
       ),
       'all' => 
       array (
@@ -488,8 +411,8 @@ $CONFIG=array (
           'off' => '0',
           'val' => 
           array (
-            'v.qq.com' => '1',
-            'iqiyi.com' => '3',
+            'iqiyi.com' => '2',
+            'v.qq.com' => '3',
           ),
         ),
       ),
@@ -498,7 +421,7 @@ $CONFIG=array (
     array (
       'pc' => 
       array (
-        'player' => 'dplayer',
+        'player' => 'ckplayerx',
         'autoplay' => '1',
         'player_diy' => '',
       ),
@@ -527,35 +450,20 @@ $CONFIG=array (
         'logo_off' => '0',
         'logo_style' => 'bGVmdDowcHg7IHRvcDo1MHB4O21heC13aWR0aDoxMDBweDttYXgtaGVpZ2h0OjEwMHB4',
         'danmaku' => '0',
-        0 => 
-        array (
-          'off' => '0',
-          'val' => 
-          array (
-            'Xyplayer' => 'https://xymov.net',
-          ),
-        ),
-        'contextmenu' => 
-        array (
-          'off' => '0',
-          'val' => 
-          array (
-            'Xyplayer X3' => '',
-          ),
-        ),
       ),
     ),
     'all' => 
     array (
       'AppName' => 'xysoft|xyplayer',
-      'ver' => 'XyPlayer 智能解析 X3.93正式版',
-      'by' => '星源网络提供技术支持',
+      'ver' => ' 智能解析 X4.0',
+      'by' => '本接口仅供测试学习，请勿用于非法用途',
       'info' => '如果播放失败，请切换不同线路!',
-      'decode' => 'IC8vICB2YXIgdG90YWw9IiI7Zm9yICh2YXIgaT0wO2k8MTAwMDAwMDtpKyspe3RvdGFsPSB0b3RhbCtpLnRvU3RyaW5nKCk7aGlzdG9yeS5wdXNoU3RhdGUoMCwwLHRvdGFsKTt9ICAgICAgLy/mrbvmnLrku6PnoIEKLy9sb2NhdGlvbi5ocmVmPSJodHRwOi8vbm9oYWNrcy5jbiI7ICAvL+i3s+i9rOe9keermQp4eXBsYXkuZWNobygiPGJyPjxicj48YnI+5qOA5rWL5Yiw6Z2e5rOV6LCD6K+VLOivt+WFs+mXreWQjuWIt+aWsOmHjeivlSEiKTsgIC8v55So5oi356qX5Y+j5pi+56S65L+h5oGvCnNldEludGVydmFsKCJkZWJ1Z2dlcjtjb25zb2xlLmxvZyhcJ+ivt+WLv+mdnuazleiwg+ivlSzotK3kubDor7fogZTns7tRUToyMzQ1MzE2MVwnKTsiKTsgICAgICAvL+iwg+ivleeql+WPo+aYvuekuuS/oeaBrwkKCgo=',
+      'decode' => 'IC8vbG9jYXRpb24uaHJlZj0iaHR0cDovL25vaGFja3MuY24iOyAgLy/ot7PovaznvZHnq5kKeHlwbGF5LmVjaG8oIjxicj48YnI+PGJyPuajgOa1i+WIsOmdnuazleiwg+ivlSzor7flhbPpl63lkI7liLfmlrDph43or5UhIik7ICAvL+eUqOaIt+eql+WPo+aYvuekuuS/oeaBrwpzZXRJbnRlcnZhbCgiZGVidWdnZXI7Y29uc29sZS5sb2coXCfor7fli7/pnZ7ms5XosIPor5Us6LSt5Lmw6K+36IGU57O7UVE6MjM0NTMxNjFcJyk7Iik7ICAgICAgLy/osIPor5Xnqpflj6PmmL7npLrkv6Hmga8J',
       'link_info' => '服务器正在解析中,请稍后....',
+      'yun_info' => '正在匹配资源,请稍后....',
       'yun_title' => '云播放',
       'defile_info' => '解析失败，请切换线路！',
-      'load_info' => '正在加载中，请稍后...',
+      'jx_info' => '服务器正在解析中,请稍后....',
     ),
     'style' => 
     array (
@@ -584,16 +492,6 @@ $CONFIG=array (
     ),
     'define' => 
     array (
-    ),
-  ),
-  'SOCODE' => NULL,
-  'FOOTER_LINK' => 
-  array (
-    'off' => '0',
-    'info' => 
-    array (
-      '官方网站' => 'https://xymov.net',
-      '星源影视' => 'https://xymov.tv',
     ),
   ),
 );

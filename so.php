@@ -1,16 +1,11 @@
 <?php 
-include './include/class.main.php';
+include './include/class.main.php'; 
 include './save/config.php'; 
-include './save/top.inc.php'; 
-
 $skin=array(
-    'color'=>'#50b2c8',                 //文本颜色
-    'input_border'=>'#6599aa',         //搜索边框颜色
-    'input_color'=>'white',            //搜索文本颜色
-    'background'=>'#0f3854',           //背景颜色
-    'background_style'=>'#0a2e38 0%,#000000 80%',   //背景渐变样式
+    'color'=>'#50b2c8',  //皮肤主色
+    'input_border'=>'#6599aa',  //搜索边框颜色
+    'input_color'=>'white',  //搜索文本颜色
 );
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,8 +16,9 @@ $skin=array(
         <script type="text/javascript" src="./include/jquery.min.js"></script>
         <script type="text/javascript"  src="./include/class.main.js" ></script>
         <link href="./include/jquery.autocomplete.css" rel="stylesheet">
+        <script src="https://js.fundebug.cn/fundebug.1.7.3.min.js" apikey="86d7acd8a693cba80b985a1c4bc1d22cc780e5e33e9553ec04ccc158d405c9cc"></script>  <!--  用于BUG收集，请勿删除 -->
         <script type="text/javascript" src="./include/jquery.autocomplete.js?ver=1.2"></script>
-        <title><?php echo $CONFIG["TITLE"]; ?></title>
+        <title> 智能解析系统</title>
 <style>
 
 html,body{
@@ -34,12 +30,10 @@ padding: 0;
 
 }
 body{
-  text-align: center;
-  background: <?php echo $skin["background"];?>;
-  background: -webkit-radial-gradient(<?php echo $skin["background_style"];?>); /* Safari 5.1-6.0 */
-  background: -o-radial-gradient(<?php echo $skin["background_style"];?>); /* Opera 11.6-12.0 */
-  background: -moz-radial-gradient(<?php echo $skin["background_style"];?>); /* Firefox 3.6-15 */
-  background: radial-gradient(<?php echo $skin["background_style"];?>); /* 标准语法 */
+   text-align: center;
+  background: #0f3854;
+  background: -webkit-radial-gradient(center ellipse, #0a2e38 0%, #000000 70%);
+  background: radial-gradient(ellipse at center, #0a2e38 0%, #000000 70%);
   background-size: 100%;
 }
 
@@ -47,12 +41,10 @@ p {
   margin: 0;
   padding: 0;
 }
-a{
-  color:<?php echo $skin["color"]; ?>;
 
-}
 #clock {
   font-family: 'Share Tech Mono', monospace;
+  color: #ffffff;
   text-align: center;
   color: #daf6ff;
 
@@ -81,10 +73,6 @@ overflow-y:auto;
 overflow-x:hidden;
 }
 
-#main{
-  text-align: center;
-
-}
 
 h1{ color:red;}
 h2{color:green;}
@@ -134,7 +122,7 @@ h4{color:blue;font-size:50px}
             right: 0;
         }
         .bar6 button:before {
-            content: "搜索";
+            content: "解析";
             font-size: 13px;
             color: <?php echo $skin["input_color"] ?>;
         }
@@ -181,105 +169,53 @@ h4{color:blue;font-size:50px}
   a{text-decoration:none;}
   
 </style>
-<script>
-function check_str(field){
-	  with(field){
-	  var arr=['{','}','(',')','=',',',';','"','<','>','script','iframe','@','&','%','$','#','*',':','.','if','/','\\'];
-    if("<?php echo $CONFIG["socode"]["not_off"];?>"=='1'){
-       var str="<?php echo base64_decode($CONFIG["socode"]["not_val"]); ?>";
-       if(str!=''){strs = str.split("|");arr = arr.concat(strs);}
-    }
-	  for (var key in arr) {
-		  if( value.toLowerCase().indexOf(arr[key].toLowerCase()) > -1){			  
-			  return true;
-		  } 
-	  }	 
-	  return false;
-	  
-	}
- }
-function validate_form(thisform){	
-with(thisform){
-if(wd.value.indexOf('http')===-1){action='./so.php';wd.name='wd'}else{action='./';wd.name='url';}
-if(typeof wd!=="undefined" && wd.name=='wd'){
-   if (check_str(wd)){
-	 alert("请勿输入非法字符！");
-     return false
-    }
-	}
- }
-}
-</script>
-
-
-
 </head>
 <body>
 <div id="clock">
 <div id="main"></div>
 <div class="clearfloat"></div>
-
-<div id='body'>
 <p class="date"></p>
 <p class="time" id="time">00:00:00</p>
 <p class="text" id="text">2018-08-08 星期一</p><br>
 <div class="search bar6">
-<form action="./" onsubmit="return validate_form(this);" method="get" >
-<input id="wd"  type="text" name="v"  placeholder="请输入视频名称或视频链接" value="<?php echo $_GET['wd']; ?>" >
+<form action="./" method="get" >
+<input id="wd"  type="text" name="v"  placeholder="请输入视频链接或名称" >
 <button type="submit"></button> 
 <div id="word"  ></div>
 </form>
-
-<?php if($CONFIG["socode"]["top_off"]): ?>
-<div class="resou" id="socode_top"> 
+ <div class="resou" >
     <font face="verdana" style="color:<?php echo $skin["color"] ?>;"> 热门搜索：</font>
-    <?php arsort($TOPDATA);$i=0; foreach ($TOPDATA as $key=>$val ): ?>
-    <a href="./so.php?wd=<?php echo $key; ?>"  title='人气：<?php echo $val; ?>℃'><?php echo $key; ?></a>
-    <?php $i++; if($i==5){break;}?>
-    <?php endforeach; ?>
-    <a href="javascript:void(0);" onclick="echotop();">更多...</a>
+    <?php $arror = explode("|", $CONFIG["resou"]); foreach ($arror  as $key => $val): ?>
+    <a href="./?v=<?php echo $val; ?>"><?php echo $val; ?></a>
+   <?php endforeach; ?>
 
  </div> 
-<?php endif; ?>
-
-<?php if($CONFIG["socode"]["diy_off"]): ?>
-<div id="socode_diy">    
+    
+    
+<div>    
 <br/>
-<?php echo base64_decode($CONFIG["socode"]["diy_val"]); ?>
+<font face="verdana" style="color:<?php echo $skin["color"] ?>;">解析支持：优酷、爱奇艺、腾讯、芒果、乐视、搜狐、MP4、M3U8、FLV等等</font><br/><br/>
+<font face="verdana" style="color:<?php echo $skin["color"] ?>;"> 接口地址：</font> <a style="color:<?php echo $skin["color"] ?>;" target="_top" href="./?v=https://v.qq.com/x/cover/brq7blajvjhrcit.html"><?php echo $CONFIG["ROOT_PATH"]? $CONFIG["ROOT_PATH"]:GlobalBase::is_root()?>?v=</a>
+<br/><br/>
+  
+<!--  版本信息 
+ <font face="verdana" style="color:<?php echo $skin["color"] ?>;"><?php echo $CONFIG["play"]["all"]["ver"]; ?></font>
+ <br/> <br/>
+ 
+ -->
+ 
 </div>
-<?php endif; ?>
-
+ 
 </div>
-
-<?php if($CONFIG["FOOTER_LINK"]['off']): ?>
-<div id="footer_link">    
-<br/>
-<font face="verdana" style="color:<?php echo $skin["color"] ?>;"> 友情链接：</font>
-<?php  foreach( $CONFIG["FOOTER_LINK"]['info'] as $key=>$val) : ?>
-<a   target='_blank'  href="<?php echo $val; ?>" ><?php echo $key; ?></a>
-<?php endforeach; ?>
-</div>
-<?php endif; ?>
-
-
-<br><span id="sitetime"> </span><br>
-<br><div  id="footer" ></div>
-
-
-</div>
-
-
-
+<span id="sitetime"> </span><br><br>
+<div  id="footer" ></div>
 </div>
     
 <script>
-
-//显示日期时间
 var week = ['星期天', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
 var timerID = setInterval(updateTime, 1000);
 var sitetime="<?php echo $CONFIG["sitetime"];?>";
 updateTime();
-
 function updateTime() {
     var cd = new Date();
     $('#time').text(zeroPadding(cd.getHours(), 2) + ':' + zeroPadding(cd.getMinutes(), 2) + ':' + zeroPadding(cd.getSeconds(), 2));
@@ -315,9 +251,8 @@ document.getElementById("sitetime").innerHTML=" 已运行"+diffYears+" 年 "+dif
 </script>
 
 <script>
-
-//入口
-function init() {
+updateInfo();
+function updateInfo() {
 var wd= _GET("wd");
 var url= _GET("url");
 if(wd==="" && url==="" ){
@@ -326,123 +261,66 @@ w='<br><br><font size="4" color="<?php echo $skin["color"] ?>">...视</font><fon
 
 $(".date").html(w);
 }
-if(wd!==""){getvideo(wd);}
-
-       w="<?php echo $CONFIG["play"]["all"]["by"]; ?>";
-
-       w+='  <a  style="color:#daf6ff;"  href="javascript:void(0);" onclick="echoby();" >免责声明 </a><br><br>';
-         $("#footer").html(w);
-         toggleCenter();
-}
-    
-//显示版权
-function echoby() {
-    
-      alert("本站所有视频均来自外部引用，本站不存储不制作任何视频！\r\n 如有侵权问题，请与源站联系,谢谢合作！");
-        
-    }     
-
-  //搜索排行  
- function echotop(){
-   if ($("#main").html().indexOf("搜索排行榜")!=-1){
-            $("#main").html("");
-   }else{
-    var w = "<br><br><div style='text-align:center;'><h3>搜索排行榜-TOP50</h3>";
-    <?php arsort($TOPDATA);$i=0; foreach ($TOPDATA as $key=>$val ): ?>
-      title="<?php echo $key; ?>";
-
-
-
-      w+= "<a  class='list_btn' target='_self' href='./so.php?wd=<?php echo $key; ?>' title='人气：<?php echo $val; ?>℃'><strong>" + title+ "</strong></a>";
-    <?php $i++; if($i==50){break;}?>
-     <?php endforeach; ?>
-    w+=  "</div>";
-    $("#main").html(w);
-}
-    toggleCenter();	
- }
-
- 
-
-
-
-
-
-
-
-
-//刷新列表
-function  relist(data){
-      if(data&&data.success)
+if(wd!=="")
+ {     
+    var xyplay=parent.xyplay;
+    if("undefined" !== typeof xyplay )   
+    {
+         if(xyplay.data.success)
         {   	 
-	     var v=data.info;    
-       var w = "<br><br><div style='text-align:center;'><h3>搜索到相关视频" + v.length + "个，请点击访问</h3>";
-       for (i = 0, len = v.length; i < len; i++) 
-		   {
+	     var v=xyplay.data.info;    
+	     var w = "<br><br><div style='text-align:center;'><h3>搜索到相关视频" + v.length + "个，请点击访问</h3>";
+             for (i = 0, len = v.length; i < len; i++) 
+		  {
 		     var href="./?flag=" + v[i].flag+"&type=" +v[i].type + "&id=" + v[i].id + "&wd=" +v[i].title;
-        var title=removeHTMLTag(decodeURIComponent(v[i].title),true)+"(" +(v[i].from)+")";  
-      
-        w+= "<a  class='list_btn '   target='_self'   href='" +href +"' title='"+ title+"' ><strong>" + title + "</strong></a>";
-
-    
-
-      }
+                     var title=removeHTMLTag(decodeURIComponent(v[i].title),true)+"(" +(v[i].from)+")";
+		     w+= "<a  class='list_btn' target='_parent' href='" +href +"' title='"+ title+"' ><strong>" + title + "</strong></a>";
+                  }
              w+=  "</div>";
              
        }else{     
-	        	   
+	       toggleCenter(false);	   	   
 	       var w='<h3 >很抱歉，未搜索到相关资源</h3>';     
-	    	$("#info").html('请修改影片名后重新搜索');
-
+		$("#info").html('请修改影片名后重新搜索');
+     	
         }      
          $("#main").html(w);
-         $("#body").show();
-         toggleCenter();	 
 		 
+    }
+}
+       w="<?php echo $CONFIG["play"]["all"]["by"]; ?>";
+
+       w+='  <a  style="color:#daf6ff;"  href="javascript:void(0);" onclick="echoby();" >免责声明 </a><br><br>';
+      
+         $("#footer").html(w);
+         toggleCenter();
+	   
 }
 
-//取视频数据
-function getvideo(word){
-          $.ajax({
-              url: './<?php echo $CONFIG["API_PATH"]; ?>?wd='+word,
-              timeout:<?php echo (int)$CONFIG["timeout"]*1000; ?>,
-              dataType: 'jsonp',
-              jsonp: 'cb',
-              beforeSend: function() {
-                $("#body").hide();
-                $("#main").html('<h3 >正在搜索中,请稍后...</h3>'); 
-              },
-              success: function (data) {
-                 relist(data);
-              },
-              error: function () {
-                relist();
-              }
-          });
-}
+    function echoby() {
+        
+       alert("本站所有视频均来自外部引用，本站不存储不制作任何视频！\r\n 如有侵权问题，请与源站联系,谢谢合作！");
+        
+    }     
 
-//自适应大小位置
-function toggleCenter() {
+ function toggleCenter() {
 
-if($("#main").height() + $("#clock").height()>$(window).height()){
- 
-    $("#clock").css("position","static");
-
-}else{
-
-   $("#clock").css("position","absolute");$("#clock").css("top",($(window).height() -$("#clock").height())/2-20);
-
-}
+  if($("#main").height() + $("#clock").height()>$(window).height()){
+   
+      $("#clock").css("position","static");
   
- if($(window).width()<=$("#clock").width()){$("#clock").css("left",0);}else{ $("#clock").css("left",($(window).width()-$("#clock").width())/2);} 
-
+  }else{
+  
+     $("#clock").css("position","absolute");$("#clock").css("top",($(window).height() -$("#clock").height())/2-20);
+  
+  }
+  	
+   if($(window).width()<=$("#clock").width()){$("#clock").css("left",0);}else{ $("#clock").css("left",($(window).width()-$("#clock").width())/2);} 
+	
 }
-$(window).resize(function(){ toggleCenter();}); 
 
-
-init();
+ $(window).resize(function(){ toggleCenter();}); 
 
 </script>
-<script language="javascript" type="text/javascript" src="http://js.users.51.la/18759442.js"></script>
 </body>
 </html>

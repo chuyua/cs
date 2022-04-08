@@ -1,26 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
 <head>  
-<title></title>    
+<title>CkPlayerX</title>    
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
 <meta http-equiv="X-UA-Compatible" content="IE=edge"><!-- IE内核 强制使用最新的引擎渲染网页 -->
 <meta name="renderer" content="webkit">  <!-- 启用360浏览器的极速模式(webkit) -->
 <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0 ,maximum-scale=1.0, user-scalable=no"><!-- 手机H5兼容模式 -->
-
+<meta name="x5-fullscreen" content="true" ><meta name="x5-page-mode" content="app" > <!-- X5  全屏处理 -->
+<meta name="full-screen" content="yes"><meta name="browsermode" content="application">  <!-- UC 全屏应用模式 -->
+<meta name=”apple-mobile-web-app-capable” content=”yes”> <meta name=”apple-mobile-web-app-status-bar-style” content=”black-translucent” /> <!--  苹果全屏应用模式 -->
 <!--必要样式-->
 <script type="text/javascript"  src="../../include/jquery.min.js" ></script>
 <script type="text/javascript"  src="../../include/class.main.js" ></script>
-<script>
- if(_GET('p2pinfo')==="1"){
-            document.write('<script type="text/javascript"  src="./p2p/ckplayer.min.js" ><\/script>'); 
-        }else{
-            document.write('<script type="text/javascript"  src="ckplayer.min.js" ><\/script>');
-        
-        }
-
-</script>
-
-
+<script type="text/javascript"  src="ckplayer.min.js"></script>
 <style type="text/css">
 html,body{
 background-color:#000;
@@ -59,7 +51,7 @@ width:100%!important;
 	 variable: 'player',
 	 mobileCkControls:true,//是否在移动端（包括ios）环境中显示控制栏
 	 mobileAutoFull:false,//在移动端播放后是否按系统设置的全屏播放		 
-	 html5m3u8:true,         //使用hls插件
+	 //html5m3u8:true,         //使用hls插件
 	 loaded: 'loadedHandler',  //监听播放器加载成功
 	 autoplay: autoplay,
      live: live,	 

@@ -27,10 +27,7 @@
      
      //公告设置 
      $CONFIG["BOOK_INFO"]=array('off'=>filter_input(INPUT_POST, "BOOK_INFO_OFF"), 'info'=> filter_input(INPUT_POST, "BOOK_INFO_INFO") );
-   
-     //友情链接
-     $CONFIG["FOOTER_LINK"]=array('off'=>filter_input(INPUT_POST, "FOOTER_LINK_OFF"), 'info'=> GetPostArr("FOOTER_LINK_INFO"));
-
+     
      $CONFIG["HEADER_CODE"]=filter_input(INPUT_POST, "HEADER_CODE");   //页头代码
      
      $CONFIG["FOOTER_CODE"]=filter_input(INPUT_POST, "FOOTER_CODE");   //页尾代码
@@ -42,25 +39,10 @@ if(filter_has_var(INPUT_POST, "title")){
    //SEO设置
     
     $CONFIG["TITLE"]=filter_input(INPUT_POST, "title");    //网站标题设置
+    $CONFIG["resou"]=filter_input(INPUT_POST, "resou");    //热门搜索设置
     $CONFIG["keywords"]=filter_input(INPUT_POST, "keywords");  //站点关键词
     $CONFIG["description"]=filter_input(INPUT_POST, "description"); //站点描述
     $CONFIG["HEADER"]=filter_input(INPUT_POST, "HEADER");  //自定义
-   
-   //搜索页设置
-   $CONFIG["socode"]["top_off"]=filter_input(INPUT_POST, "socode_top_off");  //热门搜索开关
-   $CONFIG["socode"]["diy_off"]=filter_input(INPUT_POST, "socode_diy_off");  //自定义开关
-   $CONFIG["socode"]["not_off"]=filter_input(INPUT_POST, "socode_not_off");  //屏蔽关键字开关
-
-   $CONFIG["socode"]["diy_val"]=filter_input(INPUT_POST, "socode_diy_val");  //自定义内容
-   $CONFIG["socode"]["not_val"]=filter_input(INPUT_POST, "socode_not_val");  //屏蔽关键字内容
-  
-
-
-  // $CONFIG["socode"]["not_val"]
-  
-    $CONFIG["SOCODE"]=filter_input(INPUT_POST, "SOCODE");  //自定义
-
-
   
    //模板设置
     $CONFIG["templets"]=array ( 
@@ -128,7 +110,6 @@ if(filter_has_var(INPUT_POST, "play_off_link")){
         $CONFIG["play"]['off']['yun']=filter_input(INPUT_POST, "play_off_yun");
         $CONFIG["play"]['off']['jx']=filter_input(INPUT_POST, "play_off_jx");
         $CONFIG["play"]['off']['live']=filter_input(INPUT_POST, "play_off_live");
-        $CONFIG["play"]['off']['submit']=filter_input(INPUT_POST, "play_off_submit");
         $CONFIG["play"]['off']['mylink']=filter_input(INPUT_POST, "play_off_mylink");
         $CONFIG["play"]['off']['help']=filter_input(INPUT_POST, "play_off_help");
         $CONFIG["play"]['off']['debug']=filter_input(INPUT_POST, "play_off_debug");
@@ -145,15 +126,16 @@ if(filter_has_var(INPUT_POST, "play_off_link")){
 
 if(filter_has_var(INPUT_POST, "play_line_pc_line")){	
 	$CONFIG["play"]['line']['pc']['line']=filter_input(INPUT_POST, "play_line_pc_line");
+        $CONFIG["play"]['line']['pc']['adtime']=filter_input(INPUT_POST, "play_line_pc_adtime");
+        $CONFIG["play"]['line']['pc']['adPage']=filter_input(INPUT_POST, "play_line_pc_adPage");
+         $CONFIG["play"]['line']['pc']['info']=filter_input(INPUT_POST, "play_line_pc_info");
         $CONFIG["play"]['line']['pc']['infotime']=filter_input(INPUT_POST, "play_line_pc_infotime");
-        $CONFIG["play"]['line']['pc']['wait']=filter_input(INPUT_POST, "play_line_pc_wait");
-
+       
         $CONFIG["play"]['line']['wap']['line']=filter_input(INPUT_POST, "play_line_wap_line");
+        $CONFIG["play"]['line']['wap']['adtime']=filter_input(INPUT_POST, "play_line_wap_adtime");
+        $CONFIG["play"]['line']['wap']['adPage']=filter_input(INPUT_POST, "play_line_wap_adPage");
+         $CONFIG["play"]['line']['wap']['info']=filter_input(INPUT_POST, "play_line_wap_info");
         $CONFIG["play"]['line']['wap']['infotime']=filter_input(INPUT_POST, "play_line_wap_infotime");
-        $CONFIG["play"]['line']['wap']['wait']=filter_input(INPUT_POST, "play_line_wap_wait");
-
-
-
         $CONFIG["play"]['line']['all']['autoline']['off']=filter_input(INPUT_POST, "play_line_all_autoline_off");
         $arr=preg_split('/[\r\n]+/s', trim(filter_input(INPUT_POST, "play_line_all_autoline_val")));
         foreach($arr as $key){$val=explode("=>",$key); $array[trim($val[0])]=trim($val[1]);}
@@ -173,17 +155,15 @@ if(filter_has_var(INPUT_POST, "play_play_pc_player")){
         $CONFIG["play"]['play']['wap']['autoplay']=filter_input(INPUT_POST, "play_play_wap_autoplay");
         
         $CONFIG["play"]['play']['all']['ver']=filter_input(INPUT_POST, "play_play_all_ver"); 
-        $CONFIG["play"]['play']['all']['seektime']=filter_input(INPUT_POST, "play_play_all_seektime");
         $CONFIG["play"]['play']['all']['p2pinfo']=filter_input(INPUT_POST, "play_play_all_p2pinfo");
+        $CONFIG["play"]['play']['all']['seektime']=filter_input(INPUT_POST, "play_play_all_seektime");
         $CONFIG["play"]['play']['all']['logo_off']=filter_input(INPUT_POST, "play_play_all_logo_off");
         $CONFIG["play"]['play']['all']['logo_style']=base64_encode(filter_input(INPUT_POST, "play_play_all_logo_style"));
         $CONFIG["play"]['play']['all']['danmaku']=filter_input(INPUT_POST, "play_play_all_danmaku");
-       
-        $CONFIG["play"]['play']['all']['contextmenu']['off']=filter_input(INPUT_POST, "play_play_all_contextmenu_off");
-        $CONFIG["play"]['play']['all']['contextmenu']['val']=GetPostArr("play_play_all_contextmenu_val");   
-       
         $CONFIG["play"]['play']['all']['autoline']['off']=filter_input(INPUT_POST, "play_play_all_autoline_off");
-        $CONFIG["play"]['play']['all']['autoline']['val']=GetPostArr("play_play_all_autoline_val");   
+        $arr=preg_split('/[\r\n]+/s',trim(filter_input(INPUT_POST, "play_play_all_autoline_val")));
+        foreach($arr as $key){$val=explode("=>",$key); $array[trim($val[0])]=trim($val[1]);}
+        $CONFIG["play"]['play']['all']['autoline']['val']=$array;     
 }
 
 //播放 其他配置
@@ -193,24 +173,32 @@ if(filter_has_var(INPUT_POST, "play_all_ver")){
         $CONFIG["play"]['all']['ver']=filter_input(INPUT_POST, "play_all_ver");
         $CONFIG["play"]['all']['by']=filter_input(INPUT_POST, "play_all_by");
         $CONFIG["play"]['all']['info']=filter_input(INPUT_POST, "play_all_info");
-        $CONFIG["play"]['all']['yun_title']=filter_input(INPUT_POST, "play_all_yun_title");   
-        $CONFIG["play"]['all']['load_info']=filter_input(INPUT_POST, "play_all_load_info");
+        $CONFIG["play"]['all']['link_info']=filter_input(INPUT_POST, "play_all_link_info");
         $CONFIG["play"]['all']['defile_info']=filter_input(INPUT_POST, "play_all_defile_info");
+        $CONFIG["play"]['all']['yun_info']=filter_input(INPUT_POST, "play_all_yun_info");
+        $CONFIG["play"]['all']['yun_title']=filter_input(INPUT_POST, "play_all_yun_title");   
         $CONFIG["play"]['all']['decode']= filter_input(INPUT_POST, "play_all_decode");  
 }
 
 //播放 样式配置
 
-if(filter_has_var(INPUT_POST, "play_style_logo_show")){	
-            
+if(filter_has_var(INPUT_POST, "play_style_line_style")){	
+        
+        $CONFIG["play"]['style']['off']=filter_input(INPUT_POST, "play_style_off");
 	$CONFIG["play"]['style']['logo_show']=filter_input(INPUT_POST, "play_style_logo_show");
         $CONFIG["play"]['style']['line_show']=filter_input(INPUT_POST, "play_style_line_show");
         $CONFIG["play"]['style']['list_show']= filter_input(INPUT_POST, "play_style_list_show");
         $CONFIG["play"]['style']['flaglist_show']=filter_input(INPUT_POST, "play_style_flaglist_show");
         $CONFIG["play"]['style']['playlist_show']=filter_input(INPUT_POST, "play_style_playlist_show");
-        $CONFIG["play"]['style']['off']=filter_input(INPUT_POST, "play_style_off");
+        $CONFIG["play"]['style']['line_style']=filter_input(INPUT_POST, "play_style_line_style");
+        $CONFIG["play"]['style']['line_hover']=filter_input(INPUT_POST, "play_style_line_hover");
+        $CONFIG["play"]['style']['line_on']= filter_input(INPUT_POST, "play_style_line_on");
+        $CONFIG["play"]['style']['play_style']=filter_input(INPUT_POST, "play_style_play_style");
+        $CONFIG["play"]['style']['play_hover']=filter_input(INPUT_POST, "play_style_play_hover");        
          file_put_contents("../save/play.css",trim(filter_input(INPUT_POST, "play_style_css")));
          
+         
+           
 }
 
 
@@ -233,18 +221,3 @@ if( Main_db::save()){
 		 exit(json_encode(array('success'=>0,'icon'=>0,'m'=>"保存失败!请检测配置文件权限")));
 	} 
   
-
-  function GetPostArr($word,$BASE64=false,$delimiter="=>")
-  
-  {
-                $val=trim(filter_input(INPUT_POST, $word)); 
-                if($BASE64){$val= base64_decode($val);}
-                if($val==""){return null;}   
-                $arr=preg_split('/[\r\n]+/s', $val);
-                foreach($arr as $key){
-                  $val=explode($delimiter,$key);
-                  $key=trim($val[0]);
-                  if($key!==""){$array[$key]= trim($val[1]);}
-                }
-                return $array;
-  }      

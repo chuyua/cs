@@ -1,10 +1,5 @@
 <?php 
-/*##################################################
-# xypaly 智能视频解析 X3  by nohacks.cn
-# 官方网站: http://nohacks.cn
-# 源码获取：http://nohacks.taobao.com 
-# 模块功能：m3u8本地化
-###################################################*/
+
 error_reporting(0);
 require_once(dirname(__FILE__).'/'."../include/class.main.php");
 require_once(dirname(__FILE__).'/'."../save/config.php");

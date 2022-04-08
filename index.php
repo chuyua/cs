@@ -1,17 +1,15 @@
 <?php 
 /*
 '软件名称：xypaly 智能视频解析  X3
-'开发作者：nohacks    源码下载：http://www.x6d.com/
+'开发作者：nohacks   官方网站：http://baidu.com/
 '--------------------------------------------------------
 '适用本程序需遵循 商业软件 许可协议
 '这不是一个自由软件！您只能在不用于商业目的的前提下对程序代码进行修改和使用；
 '不允许对程序代码以任何形式任何目的的再发布。
 '--------------------------------------------------------
 */
-
 //运行目录
 define("FCPATH", str_replace("\\", "/",dirname(__FILE__)));
-
 
 //加载核心类
  require_once FCPATH.'/include/class.main.php';
@@ -28,11 +26,6 @@ define("FCPATH", str_replace("\\", "/",dirname(__FILE__)));
  }
 
 define("ROOT_PATH", $CONFIG["ROOT_PATH"] ? $CONFIG["ROOT_PATH"] : GlobalBase::is_root());
-
-
-//反腾讯安全检查及微信QQ防红
-require_once FCPATH.'/include/class.fackqq.php';
-
 
 //加载防火墙规则
 Blacklist::parse($CONFIG["BLACKLIST"]);
@@ -83,10 +76,8 @@ code
 
 //定义模板目录
 
-define('TEMPLETS_NAME',(lsMobile()? $CONFIG["templets"]['wap']:$CONFIG["templets"]['pc']));
-
-define('TEMPLETS_PATH', 'templets/'.TEMPLETS_NAME.'/');
+define('TEMPLETS_PATH', 'templets/'.(lsMobile()? $CONFIG["templets"]['wap']:$CONFIG["templets"]['pc']).'/');
 
 //加载模版
 
-include_once  TEMPLETS_PATH.$CONFIG["templets"]['html'].'/index.htm';
+include_once  TEMPLETS_PATH.$CONFIG["templets"]['html'].'/index.php';

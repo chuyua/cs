@@ -288,7 +288,7 @@ switch ($type) {
         break;
     //更新 云规则 
     case 'upyundata':
-        $api = "https://parse.xymov.net";
+        $api = "https://server.nohacks.cn/parse";
         $data = curl($api."/save/yun.match.js?time=".uniqid());
         if (preg_match("/\<\?php[\S\s]*\?\>/i", $data)) {
             if (file_put_contents("../save/yun.match.php", $data)) {
@@ -310,7 +310,6 @@ switch ($type) {
           copy('../source/bak/yun.config.php','../save/yun.config.php');
           copy('../source/bak/yun.data.php','../save/yun.data.php');
           copy('../source/bak/yun.match.php','../save/yun.match.php');
-          copy('../source/bak/top.inc.php','../save/top.inc.php');
             $info["success"] = 1;
             $info['icon'] = 6;
             $info['m'] = "恢复成功！";
@@ -349,25 +348,6 @@ switch ($type) {
         }
         exit(json_encode($info));
         
-       // 保存微信插件配置
-
-     case 'plus_weixin_save':
-
-        $CONFIG["plus"]['weixin'] = array(
-            'title'=>filter_input(INPUT_POST, 'PLUS_WEIXIN_TITLE'),
-            'api'=>filter_input(INPUT_POST, 'PLUS_WEIXIN_API'),
-            'token'=>filter_input(INPUT_POST, 'PLUS_WEIXIN_TOKEN'),
-            'pic'=>filter_input(INPUT_POST, 'PLUS_WEIXIN_PIC'),
-            'book'=>filter_input(INPUT_POST, 'PLUS_WEIXIN_BOOK'),
-            'num'=>filter_input(INPUT_POST, 'PLUS_WEIXIN_NUM'),
-            'msg_send'=>filter_input(INPUT_POST, 'PLUS_WEIXIN_MSG_SEND'),
-            'msg_not'=>filter_input(INPUT_POST, 'PLUS_WEIXIN_MSG_NOT'),
-            'msg_help'=>filter_input(INPUT_POST, 'PLUS_WEIXIN_MSG_HELP'),
-        );
-
-        $info['m'] = "保存成功";
-        break;
-
     default:
         exit(json_encode(array('success' => 0, 'icon' => 0, 'm' => "参数错误！")));
 }

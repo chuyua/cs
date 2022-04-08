@@ -36,12 +36,14 @@ $TITLE=$CONFIG["TITLE"];
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="renderer" content="webkit">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta http-equiv="Access-Control-Allow-Origin" content="*"><!-- 允许跨域访问 -->
 <meta http-equiv="pragma" content="no-cache" /><meta http-equiv="expires" content="0" />    <!-- 不缓存网页 -->
 <meta name="x5-fullscreen" content="true" /><meta name="x5-page-mode" content="app"  /> <!-- X5  全屏处理 -->
 <meta name="full-screen" content="yes" /><meta name="browsermode" content="application" />  <!-- UC 全屏应用模式 -->
-<meta name="apple-mobile-web-app-capable" content="yes "/> <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" /> <!--  苹果全屏应用模式 -->
+<meta name=”apple-mobile-web-app-capable” content=”yes” /> <meta name=”apple-mobile-web-app-status-bar-style” content=”black-translucent” /> <!--  苹果全屏应用模式 -->
+
 <title><?php echo $TITLE ?></title>
 <script type="text/javascript" src="./include/jquery.min.js"></script>
 <script type="text/javascript"  src="./include/class.main.js" ></script>
@@ -69,11 +71,9 @@ object-fit:contain;
 
 
 <script type="text/javascript">    
-var url='<?php echo $url ?>'; var cip='null',api=""; 
+var url='<?php echo $url ?>'; var cip='null';
 
-var jxapi=is_mobile()? "<?php echo $CONFIG["jx_url"][$CONFIG["play"]["line"]["wap"]["line"]-1] ?>":"<?php echo $CONFIG["jx_url"][$CONFIG["play"]["line"]["pc"]["line"]-1] ?>" ;
-
-if(jxapi!=""){api=jxapi.split("=>")[1]};
+var api=is_mobile()? "<?php echo $CONFIG["jx_url"][$CONFIG["play"]["line"]["wap"]["line"]] ?>":"<?php echo $CONFIG["jx_url"][$CONFIG["play"]["line"]["pc"]["line"]] ?>" ;
 
 var autoplay="<?php echo $autoplay ?>";
 

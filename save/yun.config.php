@@ -2,8 +2,8 @@
 $YUN_CONFIG=array (
   'API' => 
   array (
-    0 => '源1=>https://api.iokzy.com/inc/ldg_seackm3u8s.php',
-    1 => '源2=>http://www.zdziyuan.com/inc/s_ldgm3u8_sea.php',
+    0 => '线路1=>http://api.iokzy.com/inc/apickm3u8.php',
+    1 => '线路2=>http://cj.wlzy.tv/inc/api_mac_m3u8.php',
   ),
   'name_filter' => '激情|写真|成人|福利',
   'flag_filter' => '',
@@ -14,5 +14,4 @@ $YUN_CONFIG=array (
     'zuidam3u8' => '源2',
   ),
   'url_filter' => '',
-  'type_filter' => '福利|伦理',
 );

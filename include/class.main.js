@@ -1,8 +1,4 @@
-/*###########################################
-# xypaly 智能视频解析整合接口 by nohacks.cn#
-# 官方网站: http://nohacks.cn");           #
-# 源码获取：http://nohacks.taobao.com");   #
-##########################################*/
+
 /* global define, Base64, opera, java */
 
 
@@ -222,7 +218,7 @@ function getCookie(c_name) {
             return unescape(document.cookie.substring(c_start, c_end));
         }
     }
-    return '';
+    return "";
 }
 
 //判断设备类型
@@ -269,7 +265,7 @@ function is_time(time){
 function random(min, max) {
      min = Math.ceil(min);
      max = Math.floor(max);
-     return Math.floor(Math.random() * (max - min + 1)) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
  }
 
 //取随机颜色
@@ -377,8 +373,7 @@ if (off==="0") {
     });
 };
 }
-
-
+ 
 
    
    

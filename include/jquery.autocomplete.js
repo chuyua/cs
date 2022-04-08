@@ -1,5 +1,5 @@
 /*轻量级搜索自动完成处理插件 jquery.autocomplete.js
-jquery  autocomplete plus v1.6 by nohacks.cn time: 2017.10.4  
+jquery  autocomplete plus v1.6 by baidu.com time: 2017.10.4  
 jsonp : "$cb["s":{"",""}];​"  注：不包括引号，jsonp服务必须$_GET["cb"]返回. 
 exp:
     <link href="jquery.autocomplete.css" rel="stylesheet">
@@ -16,7 +16,7 @@ $(function(){
     'use strict';   //严格模式
     var $searchInput = $('#wd');              //设置显示控件
     var $autocomplete  =$('#word');           //设置输入控件
-    var $api  ='./api.php?tp=jsonp&wd=';                //设置api
+    var $api  ='./api.php?wd=';                //设置api
 	
     $searchInput.attr('autocomplete','off'); 
     var selectedItem = null; 

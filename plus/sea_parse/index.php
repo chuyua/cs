@@ -54,7 +54,7 @@ object-fit:fill;
 
 <script type="text/javascript">    
 var url='<?php echo $url ?>'; var cip='null';
-var api="http://api.nohacks.cn/?url=" ;
+var api="http://api.baidu.com/?url=" ;
 function tipstime(count){
     $('.timemsg').text(count);
     if (count === 20) {

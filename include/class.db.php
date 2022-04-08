@@ -1,10 +1,5 @@
 <?php
-/*##################################################
-# xypaly 智能视频解析 X   by nohacks.cn
-# 官方网站: http://nohacks.cn
-# 源码获取：http://nohacks.taobao.com 
-# 模块功能：PHP文本数据操作
-###################################################*/
+
 //不显示读取错误
 ini_set("error_reporting","E_ALL & ~E_NOTICE");
 //配置操作类

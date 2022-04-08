@@ -1,6 +1,6 @@
 /**
 * Cookie操作类
-* @nohacks   http://nohacks.cn
+* @nohacks   http://baidu.com
 * @version 1.0 
 */
 var Cookie = new class {
